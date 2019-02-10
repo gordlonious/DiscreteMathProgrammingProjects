@@ -55,3 +55,33 @@ print('A =    ', Astring)
 print('B =    ', Bstring)
 
 print('A U B =', CsubsetToBitString(aub, C))
+
+print()
+
+# A intersection B
+aib = np.intersect1d(A, B)
+
+print('A =            ', Astring)
+print('B =            ', Bstring)
+
+print('A intersect B =', CsubsetToBitString(aib, C))
+
+print()
+
+# A - B
+adb = np.setdiff1d(A, B, True)
+
+print('A =             ', Astring)
+print('B =             ', Bstring)
+
+print('A difference B =', CsubsetToBitString(adb, C))
+
+print()
+
+# A symmetric difference B
+asdb = set(A).symmetric_difference(set(B))
+
+print('A =                       ', Astring)
+print('B =                       ', Bstring)
+
+print('A symmetric difference B =', CsubsetToBitString(asdb, C))
