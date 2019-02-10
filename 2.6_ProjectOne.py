@@ -12,6 +12,18 @@ def NumpyBoolArrayToString(nba):
             
     return s
 
+def CsubsetToBitString(s, c):
+
+    str = ''
+
+    for i in range(0, len(c)):
+        if c[i] in s:
+            str += '1'
+        else:
+            str += '0'
+
+    return str
+
 # arbitrary set with n elements
 C = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
@@ -33,3 +45,13 @@ Bbits = np.array([1,1,1,0,1,0,1,0,0,0,1,0,1], dtype=np.bool)
 print('A is:           ', Astring)
 
 print('A complement is:', NumpyBoolArrayToString(~Abits))
+
+print() # print new line
+
+# A U B
+aub = np.union1d(A, B)
+
+print('A =    ', Astring)
+print('B =    ', Bstring)
+
+print('A U B =', CsubsetToBitString(aub, C))
