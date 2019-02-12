@@ -1,3 +1,6 @@
+# Gordon Portzline and Zhengyu Wu
+# CSIS-2430-402-Sp19
+
 from collections import Counter
 
 # famous people
