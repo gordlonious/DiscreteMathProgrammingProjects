@@ -59,14 +59,7 @@ def mergeSortCompare(l):
 
                 k=k+1
 
-    print("Executing MERGESORT and counting comparison operations...")            
-
     mergeSort(l, comparisonCount) # sort the list
 
     return comparisonCount[0]
 
-alist = [54,26,93,17,77,31,44,55,20]
-
-comparisonCount = mergeSortCompare(alist)
-
-print("The number of items compared by mergesort was: {0}".format(comparisonCount))
