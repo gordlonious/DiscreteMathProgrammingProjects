@@ -1,3 +1,9 @@
+#Discrete Mathematics
+#CSIS Programming Project 2
+#Gordon Portzline
+#Zhengyu Wu
+#Brad Rohobck 
+
 import MergeSortTests
 
 # here 'all' is referring to n=4, n=6, and n=8 for the given sort function

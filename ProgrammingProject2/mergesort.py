@@ -1,3 +1,9 @@
+#Discrete Mathematics
+#CSIS Programming Project 2
+#Gordon Portzline
+#Zhengyu Wu
+#Brad Rohobck 
+
 def mergeSortCompare(l):
 
     comparisonCount = [0]
