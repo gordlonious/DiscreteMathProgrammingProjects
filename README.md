@@ -1,5 +1,3 @@
-# DiscreteMathProgrammingProjects
-
 # Project 1
 
 # Project 2 -- Sorting Performance Measuring With Comparison Metric
