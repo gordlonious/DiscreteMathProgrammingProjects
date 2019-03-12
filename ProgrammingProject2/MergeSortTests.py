@@ -21,15 +21,3 @@ class MergeSortTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-def RunComparison(n):
-    
-    i = random.randrange(0, 100)
-
-    mslist = []
-
-    for j in range(n):
-
-        mslist.append(j)
-
-    return mergeSortCompare(mslist)
