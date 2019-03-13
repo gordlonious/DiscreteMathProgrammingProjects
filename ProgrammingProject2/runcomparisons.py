@@ -4,7 +4,6 @@
 #Zhengyu Wu
 #Brad Rohobck 
 
-from functools import reduce
 from itertools import permutations
 from mergesort import mergeSortCompare
 
