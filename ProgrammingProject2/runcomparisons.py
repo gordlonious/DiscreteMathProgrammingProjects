@@ -18,10 +18,10 @@ def RunComparisons(sort):
         ncountpairs.append([4, sort(list(p)), p])
 
     for p in permutations(range(6)):
-        ncountpairs.append([4, sort(list(p)), p])
+        ncountpairs.append([6, sort(list(p)), p])
 
     for p in permutations(range(8)):
-        ncountpairs.append([4, sort(list(p)), p])
+        ncountpairs.append([8, sort(list(p)), p])
 
     return ncountpairs
 
