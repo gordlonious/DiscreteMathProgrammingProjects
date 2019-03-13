@@ -2,7 +2,7 @@
 #CSIS Programming Project 2
 #Gordon Portzline
 #Zhengyu Wu
-#Brad Rohobck 
+#Brad Rohbock 
 
 from itertools import permutations
 from mergesort import mergeSortCompare
