@@ -4,38 +4,43 @@
 #Zhengyu Wu
 #Brad Rohbock 
 
-import MergeSortTests
+from functools import reduce
+from itertools import permutations
+from mergesort import mergeSortCompare
 
-# here 'all' is referring to n=4, n=6, and n=8 for the given sort function
-# param: comparisonFunc | should run a sort algorithm that returns an integer representing the number of comparisons made during the sort
-def RunAllComparisons(comparisonFunc):
+# PARAM sort: must give this function a sort function that returns a comparison count
+# RETURNS: a list of pairs where (x,y) = (n,comparisonCount)
+#### the list will return one n!/(n-r)! pairs for n=4, n=6, and n=8, giving you a length of 4! + 6! + 8!
+def RunComparisons(sort):
+    
+    ncountpairs = []
+    
+    for p in permutations(range(4)):
+        ncountpairs.append([4, sort(list(p)), p])
 
-    comparisons = []
+    for p in permutations(range(6)):
+        ncountpairs.append([4, sort(list(p)), p])
 
-    comparisons.append(comparisonFunc(4))
+    for p in permutations(range(8)):
+        ncountpairs.append([4, sort(list(p)), p])
 
-    comparisons.append(comparisonFunc(6))
+    return ncountpairs
 
-    comparisons.append(comparisonFunc(8))
+# PARAM: data | the comparison data in the form [(n, comparisonCount)]
+# PARAM: n | the class of comparison you would like the wors case of (i.e 4, 6, 8)
+def GetWorstCaseComparison(n, data):
+    
+    nonly = list(filter(lambda x: x[0] == n, data))
 
-    return comparisons
+    justcomparisons = []
 
-# this is basically 'main', just execute it by passing the script name to the python interpreter
-mergeSortComparisons = RunAllComparisons(MergeSortTests.RunComparison)
+    for x in nonly:
+        justcomparisons.append(x[1])
 
-print("Running MERGESORT comparisons...")
-print()
-for i,x in enumerate(mergeSortComparisons):
+    return max(justcomparisons)
 
-    if(i == 0):
-        print("  with {0} items: {1}".format(4, x))
+# main script..
 
-    elif (i == 1):
-        print("  with {0} items: {1}".format(6, x))
+mergeSortData = RunComparisons(mergeSortCompare)
 
-    elif (i == 2):
-        print("  with {0} items: {1}".format(8, x))
-
-    else:
-        raise Exception()
-
+print(GetWorstCaseComparison(4, mergeSortData))
