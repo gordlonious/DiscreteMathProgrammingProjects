@@ -4,7 +4,9 @@
 #Zhengyu Wu
 #Brad Rohbock 
 
+import quicksort
 import heapsort_Kevin
+import quicksort_Kevin
 from itertools import permutations
 from mergesort import mergeSortCompare
 
@@ -64,6 +66,8 @@ def GetTenBest(n, data):
 
 mergeSortData = RunComparisons(mergeSortCompare)
 heapSortData = RunComparisons(heapsort_Kevin.heapSort)
+quickSortData = RunComparisons(quicksort.quicksort)
+quickSortData_Kevin = RunComparisons(quicksort_Kevin.quicksort)
 
 print('mergesort worst case for n=4:')
 print(GetWorstCaseComparison(4, mergeSortData))
@@ -73,3 +77,9 @@ print(GetWorstCaseComparison(4, mergeSortData))
 
 print('heapsort worst case for n=8')
 print(GetWorstCaseComparison(8, heapSortData))
+
+print('Brad\'s quicksort worst case for n=8')
+print(GetWorstCaseComparison(8, quickSortData))
+
+print('Kevin\'s quicksort worse case for n=8')
+print(GetWorstCaseComparison(8, quickSortData_Kevin))
