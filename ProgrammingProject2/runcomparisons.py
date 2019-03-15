@@ -48,19 +48,28 @@ quickSortData_Kevin = RunComparisons(quicksort_Kevin.quicksort)
 
 print('mergesort 10 worst cases for n=4:')
 print(GetNClassWorstTenComparisons(4, mergeSortData))
+print()
 
-print('mergesort 10 worst cases for n=6:')
-print(GetNClassWorstTenComparisons(6, mergeSortData))
+print('mergesort print ten best cases for n=4')
+print(GetNClassTenBestComparisons(4, mergeSortData))
+print()
 
-print('best cases for n=8')
+print('mergesort 10 worst cases for n=8:')
+print(GetNClassWorstTenComparisons(8, mergeSortData))
+print()
+
+print('mergesort print ten best cases for n=8')
 print(GetNClassTenBestComparisons(8, mergeSortData))
+print()
 
-# I think something weird is going on with heapsort data... prints random stuff
 print('heapsort worst case for n=8')
 print(GetNClassWorstTenComparisons(8, heapSortData))
+print()
 
-#print('Brad\'s quicksort worst case for n=8')
-#print(GetNClassWorstTenComparisons(8, quickSortData))
+print('Brad\'s quicksort worst case for n=8')
+print(GetNClassWorstTenComparisons(8, quickSortData))
+print()
 
-#print('Kevin\'s quicksort worse case for n=8')
-#print(GetNClassWorstTenComparisons(8, quickSortData_Kevin))
+print('Kevin\'s quicksort worse case for n=8')
+print(GetNClassWorstTenComparisons(8, quickSortData_Kevin))
+print()
