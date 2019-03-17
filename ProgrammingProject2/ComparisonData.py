@@ -6,6 +6,8 @@ class ComparisonData:
 
         self.Data = []
 
+        self.Name = "Give this data a name!"
+
     def AddData(self, n: int, comparisonCount: int, permutation: Iterable[int]):
         
         self.Data.append([n, comparisonCount, permutation])
@@ -29,6 +31,26 @@ class ComparisonData:
     def GetComparisons(self):
 
         return self.Data[1]
+
+    def GetNClassWorstTenComparisons(self, n):
+        
+        return sorted(self.GetNClassComparisons(n))[-10:]
+
+    def GetNClassTenBestComparisons(self, n):
+
+        return sorted(self.GetNClassComparisons(n))[0:9]
+
+    def GetNClassAverage(self, n):
+
+        return sum(self.GetNClassComparisons(n))/math.factorial(n)
+
+    def GetTenBest(self):
+
+        tenBest = []
+
+        sortedByComparisons = sorted(self.Data, key=lambda x: x[1])
+
+        return sortedByComparisons[0:9]
 
 if __name__ == '__main__':
 
