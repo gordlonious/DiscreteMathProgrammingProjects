@@ -10,6 +10,7 @@ import quicksort_Kevin
 from itertools import permutations
 from mergesort import mergeSortCompare
 from ComparisonData import ComparisonData
+import math
 
 # PARAM sort: must give this function a sort function that returns a comparison count
 # RETURNS: a ComparisonData object 
@@ -39,6 +40,10 @@ def GetNClassTenBestComparisons(n, comparisonData):
 
     return sorted(comparisonData.GetNClassComparisons(n))[0:9]
 
+def GetNClassAverage(n, comparisonData):
+
+    return sum(comparisonData.GetNClassComparisons(n))/math.factorial(n)
+
 # the below code should use all sorting algorithms and data to answer part 4 
 
 mergeSortData = RunComparisons(mergeSortCompare)
@@ -50,15 +55,19 @@ print('mergesort 10 worst cases for n=4:')
 print(GetNClassWorstTenComparisons(4, mergeSortData))
 print()
 
-print('mergesort print ten best cases for n=4')
+print('mergesort 10 best cases for n=4')
 print(GetNClassTenBestComparisons(4, mergeSortData))
+print()
+
+print('mergesort average cases n=4:')
+print(GetNClassAverage(4, mergeSortData))
 print()
 
 print('mergesort 10 worst cases for n=8:')
 print(GetNClassWorstTenComparisons(8, mergeSortData))
 print()
 
-print('mergesort print ten best cases for n=8')
+print('mergesort print 10 best cases for n=8')
 print(GetNClassTenBestComparisons(8, mergeSortData))
 print()
 
@@ -70,6 +79,16 @@ print('Brad\'s quicksort worst case for n=8')
 print(GetNClassWorstTenComparisons(8, quickSortData))
 print()
 
+print('Brad\'s quicksort best case for n=8')
+print(GetNClassTenBestComparisons(8, quickSortData))
+print()
+
 print('Kevin\'s quicksort worse case for n=8')
 print(GetNClassWorstTenComparisons(8, quickSortData_Kevin))
 print()
+
+print('Kevin\'s quicksort worse case for n=8')
+print(GetNClassTenBestComparisons(8, quickSortData))
+print()
+
+
