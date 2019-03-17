@@ -1,4 +1,5 @@
 from typing import Iterable
+import math
 
 class ComparisonData:
 
@@ -46,11 +47,16 @@ class ComparisonData:
 
     def GetTenBest(self):
 
-        tenBest = []
-
         sortedByComparisons = sorted(self.Data, key=lambda x: x[1])
 
         return sortedByComparisons[0:9]
+
+    def GetTenWorst(self):
+
+        sortedByComparisons = sorted(self.Data, key=lambda x: x[1])
+
+        return sortedByComparisons[-10:]
+
 
 if __name__ == '__main__':
 

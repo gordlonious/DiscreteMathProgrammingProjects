@@ -12,6 +12,7 @@ from mergesort import mergeSortCompare
 from ComparisonData import ComparisonData
 import math
 from Part4Data import Part4Data
+from CallPrintMethods import CallAllPrintMethods
 
 # PARAM sort: must give this function a sort function that returns a comparison count
 # RETURNS: a ComparisonData object 
@@ -31,33 +32,13 @@ def RunComparisons(sort):
 
     return ncomparperm
 
-# PARAM: n | the class of comparison you would like the worst case of (i.e 4, 6, 8)
-# PARAM: data | a ComparisonData object 
-def GetNClassWorstTenComparisons(n, comparisonData):
-    
-    return sorted(comparisonData.GetNClassComparisons(n))[-10:]
-
-def GetNClassTenBestComparisons(n, comparisonData):
-
-    return sorted(comparisonData.GetNClassComparisons(n))[0:9]
-
-def GetNClassAverage(n, comparisonData):
-
-    return sum(comparisonData.GetNClassComparisons(n))/math.factorial(n)
-
-def GetPart4Data(comparisonData):
-
-    # n = 4
-    tenWorst = GetNClassTenWorstComparisons(4, comparisonData)
-
 
 # the below code should use all sorting algorithms and data to answer part 4 
 
-mergeSortData = RunComparisons(mergeSortCompare)
-heapSortData = RunComparisons(heapsort_Kevin.heapSort)
-quickSortData = RunComparisons(quicksort.quicksort)
-quickSortData_Kevin = RunComparisons(quicksort_Kevin.quicksort)
+mergeSortData = Part4Data(RunComparisons(mergeSortCompare), "mergesort")
+heapSortData = Part4Data(RunComparisons(heapsort_Kevin.heapSort), "heapsort")
+quickSortData = Part4Data(RunComparisons(quicksort.quicksort), "quicksort")
 
-mergeSortDataPrinter = Part4Data(mergeSortData, "mergesort")
-mergeSortDataPrinter.PrintTenBest() 
-
+CallAllPrintMethods(mergeSortData)
+CallAllPrintMethods(heapSortData)
+CallAllPrintMethods(quickSortData)
