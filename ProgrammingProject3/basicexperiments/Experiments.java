@@ -1,12 +1,17 @@
 package basicexperiments;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
+//import java.util.stream;
 
 public class Experiments {
 	
 	private Experiments()
 	{
-		ExperimentsList = Arrays.asList(
+		ExperimentsList = List.of(
 			new Experiment("Cloud Patterns", 36, 5),
 			new Experiment("Solar Flares", 264, 9),
 			new Experiment("Solar Power", 188, 6),
@@ -20,7 +25,30 @@ public class Experiments {
 			new Experiment("Cosmic Rays", 80, 7),
 			new Experiment("Yeast Fermentation", 27, 4)
 		);
+		
+		ExperimentsByRating = new HashMap<>();
+		
+		for(Experiment e : ExperimentsList)
+		{
+			if(ExperimentsByRating.containsKey(e.Rating)) ExperimentsByRating.get(e.Rating).add(e);
+			
+			else ExperimentsByRating.put(e.Rating, new ArrayList(Arrays.asList(e)));
+		}
 	}
 	
-	public static List<Experiment> ExperimentsList;
+	public static Experiments GetInstance()
+	{
+		if (Instance == null)
+		{
+			Instance = new Experiments();
+			return Instance;
+		}
+		else return Instance;
+	}
+	
+	private static Experiments Instance;
+	
+	public List<Experiment> ExperimentsList;
+	
+	public Map<Integer, List<Experiment>> ExperimentsByRating;
 }
