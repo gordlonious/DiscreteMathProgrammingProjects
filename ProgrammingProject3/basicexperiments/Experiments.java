@@ -5,13 +5,12 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
-//import java.util.stream;
 
 public class Experiments {
 	
 	private Experiments()
 	{
-		ExperimentsList = List.of(
+		ExperimentsList = new ArrayList<>(List.of(
 			new Experiment("Cloud Patterns", 36, 5),
 			new Experiment("Solar Flares", 264, 9),
 			new Experiment("Solar Power", 188, 6),
@@ -24,7 +23,7 @@ public class Experiments {
 			new Experiment("Micrometeorites", 170, 9),
 			new Experiment("Cosmic Rays", 80, 7),
 			new Experiment("Yeast Fermentation", 27, 4)
-		);
+		));
 		
 		ExperimentsByRating = new HashMap<>();
 		
