@@ -2,3 +2,6 @@ __pycache__
 *.class
 *.dll
 *.exe
+.vs
+bin
+obj

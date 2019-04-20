@@ -1,3 +1,5 @@
+module LinearRandom
+
 open System
 
 let r = new Random()
